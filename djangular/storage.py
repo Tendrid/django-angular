@@ -9,11 +9,11 @@ class AngularAppStorage(AppStaticStorage):
         # app is the actual app module
         print "----------------------------->", app
         self.prefix = os.path.join(*(app.split('.')))
-        super(AppStaticStorage, self).__init__(app, *args, **kwargs)
+        super(AngularAppStorage, self).__init__(app, *args, **kwargs)
 
     def path(self, name):
 
     	print "---------------->", name
 
         name = sub('^' + self.prefix + os.sep, '', name)
-        return super(AppStaticStorage, self).path(name)
+        return super(AngularAppStorage, self).path(name)
