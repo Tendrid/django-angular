@@ -7,12 +7,13 @@ class AngularAppStorage(AppStaticStorage):
 
     def __init__(self, app, *args, **kwargs):
         # app is the actual app module
-        raise TypeError(app)
+        print "----------------------------->", app
         self.prefix = os.path.join(*(app.split('.')))
         super(AppStaticStorage, self).__init__(app, *args, **kwargs)
 
     def path(self, name):
-        raise TypeError(name)
+
+    	print "---------------->", name
 
         name = sub('^' + self.prefix + os.sep, '', name)
         return super(AppStaticStorage, self).path(name)
