@@ -1,4 +1,5 @@
 from django.contrib.staticfiles.storage import AppStaticStorage
+import os
 
 class AngularAppStorage(AppStaticStorage):
    source_dir = 'app'
